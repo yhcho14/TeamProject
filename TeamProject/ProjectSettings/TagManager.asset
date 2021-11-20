@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LocalPlayer
+  - FeetPos1
+  - FeetPos2
+  - Camera1
+  - Camera2
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
