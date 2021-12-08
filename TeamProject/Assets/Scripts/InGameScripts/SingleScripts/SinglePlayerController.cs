@@ -5,12 +5,13 @@ using UnityEngine;
 public class SinglePlayerController : MonoBehaviour
 {
     private Rigidbody2D rb; //  플레이어 객체
+    private Animator anim;
 
     public float speed;  // 속도
     public float jumpForce;  // 점프 높이 
     public float moveInput;  // 좌우 정도
 
-    private bool isGrounded;  // 땅에 닿아 있는지
+    public bool isGrounded;  // 땅에 닿아 있는지
     public Transform feetPos;  // 플레이어 발의 위치
     public float checkRadius;  // 원의 반지름
     public LayerMask whatIsGround;  // 유니티 엔진 땅 레이어
@@ -21,7 +22,11 @@ public class SinglePlayerController : MonoBehaviour
 
     private void Start()  // 시작 시 호출
     {
+        Application.targetFrameRate = 60;
+        Time.timeScale = 1f;
         rb = GetComponent<Rigidbody2D>(); // 유니티 엔진에서 스크립트가 달려 있는 오브젝트의 Rigidbody2D를 rb 변수에 연결
+
+        anim = this.GetComponent<Animator>();
     }
 
     private void FixedUpdate()  // 물리엔진 호출을 위한 Update
@@ -67,5 +72,8 @@ public class SinglePlayerController : MonoBehaviour
         {
             isJumping = false;
         }
+
+
+        anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
     }
 }

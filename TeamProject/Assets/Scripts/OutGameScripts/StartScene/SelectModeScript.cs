@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SelectModeScript : MonoBehaviour
 {
@@ -14,4 +15,11 @@ public class SelectModeScript : MonoBehaviour
         return;
     }
 
+    public void PressMultiplayButton()
+    {
+        SelectMode.SetActive(false);
+        Application.targetFrameRate = 60;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MultiLobbyScene");
+    }
 }

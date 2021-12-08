@@ -5,12 +5,11 @@ using UnityEngine;
 public class SingleKeyController : MonoBehaviour
 {
     [SerializeField] GameObject Key;
-    [SerializeField] GameObject Player;
     [SerializeField] GameObject Door;
 
     private void Start()
     {
-        Player.gameObject.GetComponent<Renderer>().material.color = Color.red;
+        //Player.gameObject.GetComponent<Renderer>().material.color = Color.red;
         Door.gameObject.GetComponent<Renderer>().material.color = Color.red;
     }
 
@@ -18,7 +17,7 @@ public class SingleKeyController : MonoBehaviour
     {
         if(collision.transform.CompareTag("Player"))
         {
-            Player.gameObject.GetComponent<Renderer>().material.color = Color.green;
+            //Player.gameObject.GetComponent<Renderer>().material.color = Color.green;
             Door.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
 
             Key.SetActive(false);

@@ -29,11 +29,11 @@ public class SingleMovingPlatformController : MonoBehaviour
 
         if (isMoveRight)
         {
-            MovingPlatform.transform.Translate(0.025f, 0, 0);
+            MovingPlatform.transform.Translate(0.045f, 0, 0);
         }
         else if (!isMoveRight)
         {
-            MovingPlatform.transform.Translate(-0.025f, 0, 0);
+            MovingPlatform.transform.Translate(-0.045f, 0, 0);
         }
     }
 

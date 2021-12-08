@@ -7,8 +7,9 @@ public class WorldOneScript : MonoBehaviour
 {
     public void StageOnePressed()
     {
-        SceneManager.LoadScene("SingleStage1-1");
+        Application.targetFrameRate = 60;
         Time.timeScale = 1f;
+        SceneManager.LoadScene("SingleStage1-1");
     }
     public void StageTwoPressed()
     {

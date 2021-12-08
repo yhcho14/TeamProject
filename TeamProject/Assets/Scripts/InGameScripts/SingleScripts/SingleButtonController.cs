@@ -9,9 +9,9 @@ public class SingleButtonController : MonoBehaviour
     [SerializeField] private LayerMask WhatIsButton;
     [SerializeField] private float checkRadius;
     [SerializeField] private float ButtonDepth;
-    [SerializeField] private GameObject feetPos;
+    [SerializeField] private GameObject feetPos1;
 
-    private bool isTouched;
+    private bool isTouched1;
     private bool isButtonTop;
 
     void Start()
@@ -21,15 +21,18 @@ public class SingleButtonController : MonoBehaviour
 
     void Update()
     {
-        isTouched = Physics2D.OverlapCircle(feetPos.transform.position, checkRadius, WhatIsButton);
+        feetPos1 = GameObject.FindGameObjectWithTag("FeetPos1");
 
-        if ((isTouched) && (isButtonTop == true))
+
+        isTouched1 = Physics2D.OverlapCircle(feetPos1.transform.position, checkRadius, WhatIsButton);
+
+        if ((isTouched1) && (isButtonTop == true))
         {
             ButtonTop.transform.Translate(0, -(ButtonDepth), 0);
             isButtonTop = false;
             //��ư ����
         }
-        else if ((!(isTouched)) && (isButtonTop == false))
+        else if ((!(isTouched1)) && (isButtonTop == false))
         {
             ButtonTop.transform.Translate(0, ButtonDepth, 0);
             isButtonTop = true;
